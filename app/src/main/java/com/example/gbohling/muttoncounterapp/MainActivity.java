@@ -2,6 +2,7 @@ package com.example.gbohling.muttoncounterapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
@@ -22,11 +23,17 @@ public class MainActivity extends AppCompatActivity {
         userInput = (EditText) findViewById(R.id.editText);
         button = (Button) findViewById(R.id.mutton);
         textView = (TextView) findViewById(R.id.textView);
+        textView.setText("");
+        textView.setMovementMethod(new ScrollingMovementMethod());
         View.OnClickListener ourOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 numTimesClicked = numTimesClicked + 1;
-                String result = "\nThe mutton got slapped " + numTimesClicked + " times";
+                String result = "The mutton got slapped " + numTimesClicked + " time";
+                if (numTimesClicked != 1) {
+                    result += "s";
+                }
+                result += "\n";
                 textView.append(result);
             }
         };
