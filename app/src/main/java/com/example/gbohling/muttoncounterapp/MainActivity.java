@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String result = userInput.getText().toString();
-                result = result + " bugs\n";
+                result = result + " goo\n";
                 textView.append(result);
 //                numTimesClicked = numTimesClicked + 1;
 //                String result = "The mutton got slapped " + numTimesClicked + " time";
