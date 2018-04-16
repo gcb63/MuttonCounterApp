@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         userInput = findViewById(R.id.editText);
+        userInput.setText("");
         Button button = findViewById(R.id.mutton);
         textView = findViewById(R.id.textView);
         textView.setText("");
@@ -30,13 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 String result = userInput.getText().toString();
                 result = result + " goo\n";
                 textView.append(result);
-//                numTimesClicked = numTimesClicked + 1;
-//                String result = "The mutton got slapped " + numTimesClicked + " time";
-//                if (numTimesClicked != 1) {
-//                    result += "s";
-//                }
-//                result += "\n";
-//                textView.append(result);
+                userInput.setText("");
             }
         };
         button.setOnClickListener(ourOnClickListener);
